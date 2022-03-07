@@ -20,9 +20,11 @@ const output = (result) => {
 }
 
 // fetch 自体は Promise を返す
-const data = fetch("./test.json")
+// const data = fetch("./test.json")
+const data = fetch("./test.txt")
     .then((response) => {
-        return response.json()　//ここでBodyからJSONを返す
+        // return response.json()　//ここでBodyからJSONを返す
+        return response.text()　// txt でも .text() でいける模様
     })
     .then((result) => {
         output(result);  //取得したJSONデータを関数に渡す
